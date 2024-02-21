@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using day2homeWork.Business.Abstract;
 using day2homeWork.Business.Concrete;
 using day2homeWork.DataAccess.Concretes;
 using day2homeWork.Entities;
@@ -44,7 +45,7 @@ class Program
 
        StudentsManager newStudent = new(new StudentsDal());
 
-       newStudent.UpdateStudent(new Students { id = 1, firstName = "John", });
+       newStudent.Update(new Students { id = 1, firstName = "John", });
             
 
 

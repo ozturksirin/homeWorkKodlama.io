@@ -54,5 +54,10 @@ namespace day2homeWork.DataAccess.Concretes
         {
             students.RemoveAll(student => student.id == id);
         }
+
+        public void Remove(Students student)
+        {
+            students.Remove(student);
+        }
     }
 }
