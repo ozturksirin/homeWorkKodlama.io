@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace day2homeWork.DataAccess.Abstracts
+namespace day2homeWork.Business.Abstract
 {
-    public interface ICourseDal
+    public interface ICourseManager
     {
-        List<Course> GetAll();
         void Add(Course course);
-        void Delete(int id);
         void Update(Course course);
+        void Delete(int id);
+        List<Course> GetAll();
 
     }
 }

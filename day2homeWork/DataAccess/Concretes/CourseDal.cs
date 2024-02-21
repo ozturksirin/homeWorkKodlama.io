@@ -48,10 +48,25 @@ namespace day2homeWork.DataAccess.Concretes
         {
             courses.Add(course);
         }
+        public void Update(Course course)
+        {
+            Course courseToUpdate = courses.SingleOrDefault(courseID => courseID.id == course.id);
+            courseToUpdate.name = course.name;
+            courseToUpdate.description = course.description;
+            courseToUpdate.teacher = course.teacher;
+            courseToUpdate.category = course.category;
+            courseToUpdate.imagePath = course.imagePath;
+        }
 
         public List<Course> GetAll()
         {
             return courses;
+        }
+
+        public void Delete(int id)
+        {
+            Course courseToDelete = courses.SingleOrDefault(courseID => courseID.id == id);
+            courses.Remove(courseToDelete);
         }
     }
 }

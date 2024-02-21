@@ -34,6 +34,32 @@ namespace day2homeWork.DataAccess.Concretes
         {
             return categories;
         }
-       
+
+        public void Remove(Category category)
+        {
+
+            if (categories.Exists(x => x.id == category.id))
+            {
+                categories.Remove(category);
+            }
+            else
+            {
+                throw new Exception("Category not found");
+            }
+
+        }
+
+        public void Update(Category category)
+        {
+            if (categories.Exists(x => x.id == category.id))
+            {
+                var categoryToUpdate = categories.FirstOrDefault(x => x.id == category.id);
+                categoryToUpdate.name = category.name;
+            }
+            else
+            {
+                throw new Exception("Category not found");
+            }
+        }
     }
 }

@@ -44,14 +44,15 @@ namespace day2homeWork.DataAccess.Concretes
             students.Add(student);
         }
 
-        public void Delete(Students student)
-        {
-            students.RemoveAll(s => s.id == student.id);
-        }
 
-        public List<Students> GetStudents(int categoryId)
+        public List<Students> GetStudents()
         {
             return students;
+        }
+
+        public void DeleteById(int id)
+        {
+            students.RemoveAll(student => student.id == id);
         }
     }
 }
